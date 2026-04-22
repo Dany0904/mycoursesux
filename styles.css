@@ -1,0 +1,655 @@
+.mycoursesux-grid {
+    display: grid;
+    gap: 20px;
+
+    /* Responsive inteligente */
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+
+    /* Mejora visual */
+    align-items: stretch;
+}
+
+/* CONTENEDOR GLOBAL */
+.mycoursesux-container {
+    padding: 20px;
+}
+
+.mycoursesux-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.mycoursesux-card {
+    background: #fff;
+    border-radius: 14px;    
+    padding: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mycoursesux-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+/* HEADER */
+.mycoursesux-header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.mycoursesux-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.3;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* META */
+.mycoursesux-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mycoursesux-progress-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* PROGRESS */
+.mycoursesux-progress-wrapper {
+    width: 100%;
+}
+
+.mycoursesux-progress-bar {
+    height: 8px;
+    background: #eee;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.mycoursesux-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #2e7d32);
+    border-radius: 6px;
+    transition: width 0.4s ease;
+}
+
+/* STATUS BADGE */
+.mycoursesux-badge {
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.mycoursesux-badge--completed {
+    background: #d4edda;
+    color: #155724;
+}
+
+.mycoursesux-badge--inprogress {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.mycoursesux-badge--notstarted {
+    background: #e2e3e5;
+    color: #383d41;
+}
+
+/* LAST ACCESS */
+.mycoursesux-lastaccess {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    color: #666;
+}
+
+/* ACTIONS */
+.mycoursesux-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+/* BUTTONS (namespaced) */
+.mycoursesux-btn {
+    flex: 1;
+    text-align: center;
+    padding: 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+/* PRIMARY */
+.mycoursesux-btn--primary {
+    background: #007bff;
+    color: #fff;
+}
+
+.mycoursesux-btn--primary:hover {
+    background: #0069d9;
+}
+
+/* GHOST */
+.mycoursesux-btn--ghost {
+    background: transparent;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+.mycoursesux-btn--ghost:hover {
+    background: #f5f5f5;
+}
+
+/* CARD CON IMAGEN */
+.mycoursesux-card--image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    padding: 0;
+    color: #fff;
+}
+
+/* FONDO */
+.mycoursesux-card-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.75);
+    transition: transform 0.4s ease;
+}
+
+.mycoursesux-card--image:hover .mycoursesux-card-bg {
+    transform: scale(1.05);
+}
+
+/* OVERLAY */
+.mycoursesux-card-overlay {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.2)
+    );
+}
+
+/* TEXTO */
+.mycoursesux-card--image .mycoursesux-title {
+    color: #fff;
+}
+
+.mycoursesux-card--image .mycoursesux-progress-value {
+    color: #fff;
+}
+
+/* PROGRESS */
+.mycoursesux-card--image .mycoursesux-progress-bar {
+    background: rgba(255,255,255,0.2);
+}
+
+.mycoursesux-card--image .mycoursesux-progress-fill {
+    background: #4CAF50;
+}
+
+/* BOTONES */
+.mycoursesux-card--image .mycoursesux-btn--ghost {
+    border: 1px solid rgba(255,255,255,0.6);
+    color: #fff;
+}
+
+.mycoursesux-card--image .mycoursesux-btn--ghost:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* FALLBACK BACKGROUND */
+.mycoursesux-card-bg--fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* INICIAL */
+.mycoursesux-initial {
+    font-size: 48px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 2px;
+}
+
+/* =========================
+   COMPACT CARD
+========================= */
+
+.mycoursesux-card--compact {
+    display: flex;
+    gap: 14px;
+    padding: 14px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    align-items: center;
+}
+
+/* LEFT */
+.mycoursesux-compact-left {
+    flex-shrink: 0;
+}
+
+.mycoursesux-compact-thumb {
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+}
+
+.mycoursesux-compact-thumb--fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mycoursesux-compact-initial {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* BODY */
+.mycoursesux-compact-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* HEADER */
+.mycoursesux-compact-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mycoursesux-compact-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* PROGRESS */
+.mycoursesux-compact-progress {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mycoursesux-compact-progress-text {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* FOOTER */
+.mycoursesux-compact-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mycoursesux-compact-lastaccess {
+    font-size: 11px;
+    color: #666;
+}
+
+/* ACTIONS */
+.mycoursesux-compact-actions .mycoursesux-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+/* =========================
+   DETAILED CARD
+========================= */
+
+.mycoursesux-card--detailed {
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+.mycoursesux-detailed-header {
+    position: relative;
+    height: 140px;
+}
+
+.mycoursesux-detailed-cover {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.mycoursesux-detailed-cover--fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mycoursesux-detailed-initial {
+    font-size: 40px;
+    color: rgba(255,255,255,0.9);
+    font-weight: 700;
+}
+
+/* OVERLAY */
+.mycoursesux-detailed-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.2)
+    );
+}
+
+.mycoursesux-detailed-title {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* BODY */
+.mycoursesux-detailed-body {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* PROGRESS */
+.mycoursesux-detailed-progress-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+/* INFO GRID */
+.mycoursesux-detailed-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.mycoursesux-detailed-info-item {
+    font-size: 12px;
+    color: #666;
+}
+
+.mycoursesux-detailed-info-item strong {
+    display: block;
+    color: #222;
+    font-size: 13px;
+}
+
+/* ACTIONS */
+.mycoursesux-detailed-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* =========================
+   IMAGE ACTION CARD
+========================= */
+
+.mycoursesux-card--image-action {
+    position: relative;
+    height: 220px;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* BACKGROUND */
+.mycoursesux-image-action-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+/* BASE (siempre visible) */
+.mycoursesux-image-action-base {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 14px;
+    z-index: 2;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.7),
+        transparent
+    );
+}
+
+.mycoursesux-image-action-title {
+    color: #fff;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* HOVER LAYER */
+.mycoursesux-image-action-hover {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0,0,0,0.75);
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* SHOW ON HOVER */
+.mycoursesux-card--image-action:hover .mycoursesux-image-action-hover {
+    opacity: 1;
+}
+
+.mycoursesux-card--image-action:hover .mycoursesux-image-action-bg {
+    transform: scale(1.1);
+}
+
+/* CONTENT */
+.mycoursesux-image-action-content {
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* INITIAL */
+.mycoursesux-image-action-initial {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+}
+
+/* =========================
+   MINIMAL STRUCTURED
+========================= */
+
+.mycoursesux-card--minimal-structured {
+    padding: 16px;
+    border-radius: 14px;
+    background: #fff;
+    border: 1px solid #eee;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    transition: all 0.2s ease;
+}
+
+.mycoursesux-card--minimal-structured:hover {
+    border-color: #ddd;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* TOP */
+.mycoursesux-minimal-top {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.mycoursesux-minimal-thumb-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.mycoursesux-minimal-title-wrap {
+    flex: 1;
+}
+
+.mycoursesux-minimal-title {
+    font-size: 14px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.mycoursesux-minimal-lastaccess {
+    font-size: 11px;
+    color: #777;
+}
+
+/* CENTER */
+.mycoursesux-minimal-center {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.mycoursesux-minimal-progress-value {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.mycoursesux-minimal-bar {
+    height: 5px;
+    background: #eee;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.mycoursesux-minimal-fill {
+    height: 100%;
+    background: #3b82f6;
+}
+
+/* BOTTOM */
+.mycoursesux-minimal-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mycoursesux-minimal-status {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: #f3f4f6;
+}
+
+.mycoursesux-minimal-status.is-completed {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.mycoursesux-minimal-status.is-inprogress {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.mycoursesux-minimal-status.is-notstarted {
+    background: #f3f4f6;
+    color: #555;
+}
+
+.mycoursesux-minimal-cta {
+    font-size: 12px;
+    font-weight: 600;
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.mycoursesux-minimal-cta:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,27 @@
+<div class="mycoursesux-grid">
+
+    {{#courses}}
+
+        {{#is_default}}
+            {{> local_mycoursesux/cards/card_default }}
+        {{/is_default}}
+
+        {{#is_compact}}
+            {{> local_mycoursesux/cards/card_compact }}
+        {{/is_compact}}
+
+        {{#is_detailed}}
+            {{> local_mycoursesux/cards/card_detailed }}
+        {{/is_detailed}}
+
+        {{#is_minimal}}
+            {{> local_mycoursesux/cards/card_minimal }}
+        {{/is_minimal}}
+
+        {{#is_image}}
+            {{> local_mycoursesux/cards/card_image }}
+        {{/is_image}}
+
+    {{/courses}}
+
+</div>

@@ -1,0 +1,62 @@
+<div class="mycoursesux-card mycoursesux-card--compact">
+
+    <!-- Lado izquierdo (visual) -->
+    <div class="mycoursesux-compact-left">
+
+        {{#hasimage}}
+            <div class="mycoursesux-compact-thumb"
+                 style="background-image: url('{{image}}');"></div>
+        {{/hasimage}}
+
+        {{^hasimage}}
+            <div class="mycoursesux-compact-thumb mycoursesux-compact-thumb--fallback"
+                 style="background: linear-gradient(135deg, {{colorstart}}, {{colorend}});">
+                <span class="mycoursesux-compact-initial">{{initial}}</span>
+            </div>
+        {{/hasimage}}
+
+    </div>
+
+    <!-- Contenido -->
+    <div class="mycoursesux-compact-body">
+
+        <div class="mycoursesux-compact-header">
+            <h4 class="mycoursesux-compact-title">{{fullname}}</h4>
+
+            <span class="mycoursesux-badge 
+                {{#iscompleted}}mycoursesux-badge--completed{{/iscompleted}}
+                {{#inprogress}}mycoursesux-badge--inprogress{{/inprogress}}
+                {{#notstarted}}mycoursesux-badge--notstarted{{/notstarted}}">
+                
+                {{#iscompleted}}✔{{/iscompleted}}
+                {{#inprogress}}●{{/inprogress}}
+                {{#notstarted}}○{{/notstarted}}
+            </span>
+        </div>
+
+        <!-- Progreso -->
+        <div class="mycoursesux-compact-progress">
+            <div class="mycoursesux-progress-bar">
+                <div class="mycoursesux-progress-fill" style="width: {{progress}}%;"></div>
+            </div>
+            <span class="mycoursesux-compact-progress-text">{{progress}}%</span>
+        </div>
+
+        <!-- Footer -->
+        <div class="mycoursesux-compact-footer">
+
+            <small class="mycoursesux-compact-lastaccess">
+                {{lastaccess}}
+            </small>
+
+            <div class="mycoursesux-compact-actions">
+                <a href="{{continueurl}}" class="mycoursesux-btn mycoursesux-btn--primary">
+                    Continuar
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

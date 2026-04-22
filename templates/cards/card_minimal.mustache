@@ -1,0 +1,69 @@
+<div class="mycoursesux-card mycoursesux-card--minimal-structured">
+
+    <!-- HEADER -->
+    <div class="mycoursesux-minimal-top">
+
+        <div class="mycoursesux-minimal-thumb">
+
+            {{#hasimage}}
+                <div class="mycoursesux-minimal-thumb-img"
+                     style="background-image: url('{{image}}');"></div>
+            {{/hasimage}}
+
+            {{^hasimage}}
+                <div class="mycoursesux-minimal-thumb-img"
+                     style="background: linear-gradient(135deg, {{colorstart}}, {{colorend}});">
+                    {{initial}}
+                </div>
+            {{/hasimage}}
+
+        </div>
+
+        <div class="mycoursesux-minimal-title-wrap">
+            <h4 class="mycoursesux-minimal-title">
+                {{fullname}}
+            </h4>
+
+            <small class="mycoursesux-minimal-lastaccess">
+                {{lastaccess}}
+            </small>
+        </div>
+
+    </div>
+
+    <!-- PROGRESO CENTRAL (PROTAGONISTA) -->
+    <div class="mycoursesux-minimal-center">
+
+        <div class="mycoursesux-minimal-progress-value">
+            {{progress}}%
+        </div>
+
+        <div class="mycoursesux-minimal-bar">
+            <div class="mycoursesux-minimal-fill"
+                 style="width: {{progress}}%;"></div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="mycoursesux-minimal-bottom">
+
+        <span class="mycoursesux-minimal-status 
+            {{#iscompleted}}is-completed{{/iscompleted}}
+            {{#inprogress}}is-inprogress{{/inprogress}}
+            {{#notstarted}}is-notstarted{{/notstarted}}">
+            
+            {{#iscompleted}}Completado{{/iscompleted}}
+            {{#inprogress}}En progreso{{/inprogress}}
+            {{#notstarted}}Sin iniciar{{/notstarted}}
+        </span>
+
+        <a href="{{continueurl}}" class="mycoursesux-minimal-cta">
+            {{#notstarted}}Iniciar{{/notstarted}}
+            {{#inprogress}}Continuar{{/inprogress}}
+            {{#iscompleted}}Abrir{{/iscompleted}}
+        </a>
+
+    </div>
+
+</div>

@@ -1,0 +1,89 @@
+<div class="mycoursesux-card mycoursesux-card--detailed">
+
+    <!-- HEADER -->
+    <div class="mycoursesux-detailed-header">
+
+        {{#hasimage}}
+            <div class="mycoursesux-detailed-cover"
+                 style="background-image: url('{{image}}');"></div>
+        {{/hasimage}}
+
+        {{^hasimage}}
+            <div class="mycoursesux-detailed-cover mycoursesux-detailed-cover--fallback"
+                 style="background: linear-gradient(135deg, {{colorstart}}, {{colorend}});">
+                <span class="mycoursesux-detailed-initial">{{initial}}</span>
+            </div>
+        {{/hasimage}}
+
+        <div class="mycoursesux-detailed-overlay">
+
+            <h3 class="mycoursesux-detailed-title">{{fullname}}</h3>
+
+            <span class="mycoursesux-badge 
+                {{#iscompleted}}mycoursesux-badge--completed{{/iscompleted}}
+                {{#inprogress}}mycoursesux-badge--inprogress{{/inprogress}}
+                {{#notstarted}}mycoursesux-badge--notstarted{{/notstarted}}">
+                
+                {{#iscompleted}}Completado{{/iscompleted}}
+                {{#inprogress}}En progreso{{/inprogress}}
+                {{#notstarted}}Sin iniciar{{/notstarted}}
+            </span>
+
+        </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="mycoursesux-detailed-body">
+
+        <!-- PROGRESO -->
+        <div class="mycoursesux-detailed-section">
+
+            <div class="mycoursesux-detailed-progress-header">
+                <span>Progreso</span>
+                <strong>{{progress}}%</strong>
+            </div>
+
+            <div class="mycoursesux-progress-bar">
+                <div class="mycoursesux-progress-fill"
+                     style="width: {{progress}}%;"></div>
+            </div>
+
+        </div>
+
+        <!-- INFO -->
+        <div class="mycoursesux-detailed-info">
+
+            <div class="mycoursesux-detailed-info-item">
+                <span>Última actividad</span>
+                <strong>{{lastaccess}}</strong>
+            </div>
+
+            <div class="mycoursesux-detailed-info-item">
+                <span>Estado</span>
+                <strong>
+                    {{#iscompleted}}Finalizado{{/iscompleted}}
+                    {{#inprogress}}Activo{{/inprogress}}
+                    {{#notstarted}}Pendiente{{/notstarted}}
+                </strong>
+            </div>
+
+        </div>
+
+        <!-- ACCIONES -->
+        <div class="mycoursesux-detailed-actions">
+
+            <a href="{{continueurl}}" class="mycoursesux-btn mycoursesux-btn--primary">
+                {{#notstarted}}Iniciar{{/notstarted}}
+                {{#inprogress}}Continuar{{/inprogress}}
+                {{#iscompleted}}Revisar{{/iscompleted}}
+            </a>
+
+            <a href="{{courseurl}}" class="mycoursesux-btn mycoursesux-btn--ghost">
+                Ver curso
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,52 @@
+<div class="mycoursesux-card mycoursesux-card--image">
+
+    {{#hasimage}}
+        <div class="mycoursesux-card-bg" style="background-image: url('{{image}}');"></div>
+    {{/hasimage}}
+
+    {{^hasimage}}
+        <div class="mycoursesux-card-bg mycoursesux-card-bg--fallback"
+             style="background: linear-gradient(135deg, {{colorstart}}, {{colorend}});">
+
+            <span class="mycoursesux-initial">{{initial}}</span>
+        </div>
+    {{/hasimage}}
+
+    <div class="mycoursesux-card-overlay">
+
+        <div class="mycoursesux-header">
+            <h3 class="mycoursesux-title">{{fullname}}</h3>
+
+            <div class="mycoursesux-meta">
+                <span class="mycoursesux-badge 
+                    {{#iscompleted}}mycoursesux-badge--completed{{/iscompleted}}
+                    {{#inprogress}}mycoursesux-badge--inprogress{{/inprogress}}
+                    {{#notstarted}}mycoursesux-badge--notstarted{{/notstarted}}">
+                    
+                    {{#iscompleted}}Completado{{/iscompleted}}
+                    {{#inprogress}}En progreso{{/inprogress}}
+                    {{#notstarted}}Sin iniciar{{/notstarted}}
+                </span>
+
+                <span class="mycoursesux-progress-value">{{progress}}%</span>
+            </div>
+        </div>
+
+        <div class="mycoursesux-progress-wrapper">
+            <div class="mycoursesux-progress-bar">
+                <div class="mycoursesux-progress-fill" style="width: {{progress}}%;"></div>
+            </div>
+        </div>
+
+        <div class="mycoursesux-actions">
+            <a href="{{continueurl}}" class="mycoursesux-btn mycoursesux-btn--primary">
+                Continuar
+            </a>
+
+            <a href="{{courseurl}}" class="mycoursesux-btn mycoursesux-btn--ghost">
+                Ver
+            </a>
+        </div>
+
+    </div>
+</div>
