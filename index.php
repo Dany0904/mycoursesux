@@ -12,7 +12,7 @@ $PAGE->requires->css('/local/mycoursesux/styles.css');
 $PAGE->requires->js_call_amd('local_mycoursesux/main', 'init');
 
 //  Obtener layout desde URL
-$layout = optional_param('layout', '', PARAM_ALPHA);
+$layout = optional_param('layout', 'default', PARAM_ALPHA);
 
 //  Guardar SOLO si viene en URL
 if (!empty($layout)) {

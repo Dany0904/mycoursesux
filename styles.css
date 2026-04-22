@@ -768,3 +768,35 @@
         text-align: center;
     }
 }
+
+.mycoursesux-kpis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.mycoursesux-kpi {
+    background: #fff;
+    border-radius: 14px;
+    padding: 14px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease;
+}
+
+.mycoursesux-kpi:hover {
+    transform: translateY(-2px);
+}
+
+.mycoursesux-kpi strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+}
+
+.mycoursesux-kpi span {
+    font-size: 12px;
+    color: #666;
+}

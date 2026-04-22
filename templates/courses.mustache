@@ -1,3 +1,48 @@
+<div class="mycoursesux-kpis">
+
+    <div class="mycoursesux-kpi">
+        <strong>{{totals.totalcourses}}</strong>
+        <span>Cursos</span>
+    </div>
+
+    <div class="mycoursesux-kpi">
+        <strong>{{totals.inprogress}}</strong>
+        <span>En progreso</span>
+    </div>
+
+    <div class="mycoursesux-kpi">
+        <strong>{{totals.completed}}</strong>
+        <span>Completados</span>
+    </div>
+
+    <div class="mycoursesux-kpi">
+        <strong>{{totals.notstarted}}</strong>
+        <span>Sin iniciar</span>
+    </div>
+
+    {{#haspending}}
+    <div class="mycoursesux-kpi">
+        <strong>{{totals.pendingactivities}}</strong>
+        <span>Pendientes</span>
+    </div>
+    {{/haspending}}
+
+    {{#hastime}}
+    <div class="mycoursesux-kpi">
+        <strong>~{{totals.estimatedminutes}} min</strong>
+        <span>Tiempo restante</span>
+    </div>
+    {{/hastime}}
+
+    {{#hasnotracking}}
+    <div class="mycoursesux-kpi mycoursesux-kpi--warning">
+        <strong>{{totals.notracking}}</strong>
+        <span>Sin seguimiento</span>
+    </div>
+    {{/hasnotracking}}
+
+</div>
+
 <div class="mycoursesux-controlbar">
 
     <!-- TOP ROW -->
@@ -31,7 +76,6 @@
                 <span class="layout-label">Visual</span>
             </button>
         </div>
-
     </div>
 
     <!-- BOTTOM ROW -->
