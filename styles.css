@@ -653,3 +653,118 @@
 .mycoursesux-minimal-cta:hover {
     text-decoration: underline;
 }
+
+/* CONTENEDOR */
+.mycoursesux-controlbar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* FILA SUPERIOR */
+.mycoursesux-controlbar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* FILA INFERIOR */
+.mycoursesux-controlbar-bottom {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* FILTROS */
+.mycoursesux-filters {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.mycoursesux-filters button {
+    border: none;
+    background: #f3f4f6;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.mycoursesux-filters button.active {
+    background: #3b82f6;
+    color: #fff;
+}
+
+/* SEARCH (PROTAGONISTA) */
+.mycoursesux-search {
+    flex: 1;
+}
+
+.mycoursesux-search input {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+/* SORT */
+.mycoursesux-sort select {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* LAYOUT */
+.mycoursesux-layout-switch {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.layout-btn {
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s ease;
+}
+
+.layout-btn:hover {
+    border-color: #3b82f6;
+}
+
+.layout-btn.active {
+    background: #3b82f6;
+    color: #fff;
+    border-color: #3b82f6;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+
+    .mycoursesux-controlbar-top {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .mycoursesux-controlbar-bottom {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .mycoursesux-layout-switch {
+        justify-content: space-between;
+    }
+
+    .layout-btn {
+        flex: 1;
+        text-align: center;
+    }
+}

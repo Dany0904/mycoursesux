@@ -1,6 +1,71 @@
-<div class="mycoursesux-grid">
+<div class="mycoursesux-controlbar">
+
+    <!-- TOP ROW -->
+    <div class="mycoursesux-controlbar-top">
+
+        <div class="mycoursesux-filters">
+            <button data-filter="all" class="active">Todos</button>
+            <button data-filter="inprogress">En progreso</button>
+            <button data-filter="completed">Completados</button>
+            <button data-filter="notstarted">Sin iniciar</button>
+        </div>
+
+        <div class="mycoursesux-layout-switch">
+            <button data-layout="default" class="layout-btn {{#is_default}}active{{/is_default}}">
+                <span class="layout-label">Grid</span>
+            </button>
+
+            <button data-layout="compact" class="layout-btn {{#is_compact}}active{{/is_compact}}">
+                <span class="layout-label">Compacto</span>
+            </button>
+
+            <button data-layout="detailed" class="layout-btn {{#is_detailed}}active{{/is_detailed}}">
+                <span class="layout-label">Detalle</span>
+            </button>
+
+            <button data-layout="minimal" class="layout-btn {{#is_minimal}}active{{/is_minimal}}">
+                <span class="layout-label">Minimal</span>
+            </button>
+
+            <button data-layout="image" class="layout-btn {{#is_image}}active{{/is_image}}">
+                <span class="layout-label">Visual</span>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- BOTTOM ROW -->
+    <div class="mycoursesux-controlbar-bottom">
+
+        <div class="mycoursesux-search">
+            <input type="text" placeholder="Buscar cursos..." id="mycoursesux-search-input">
+        </div>
+
+        <div class="mycoursesux-sort">
+            <select id="mycoursesux-sort-select">
+                <option value="recent">Última actividad</option>
+                <option value="name">Nombre</option>
+                <option value="progress">Progreso</option>
+            </select>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- LISTA -->
+<div class="mycoursesux-grid" id="mycoursesux-container">
 
     {{#courses}}
+    <div class="mycoursesux-item"
+         data-name="{{fullname}}"
+         data-progress="{{progress}}"
+         data-lastaccess="{{lastaccess}}"
+         data-status="
+            {{#iscompleted}}completed{{/iscompleted}}
+            {{#inprogress}}inprogress{{/inprogress}}
+            {{#notstarted}}notstarted{{/notstarted}}
+         ">
 
         {{#is_default}}
             {{> local_mycoursesux/cards/card_default }}
@@ -22,6 +87,7 @@
             {{> local_mycoursesux/cards/card_image }}
         {{/is_image}}
 
+    </div>
     {{/courses}}
 
 </div>
