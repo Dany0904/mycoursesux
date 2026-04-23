@@ -145,6 +145,8 @@
 
 .mycoursesux-btn--primary:hover {
     background: #0069d9;
+    color: #fff;
+    text-decoration: none;
 }
 
 /* GHOST */
@@ -190,6 +192,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 6px;
 
     background: linear-gradient(
         to top,
@@ -224,6 +227,7 @@
 
 .mycoursesux-card--image .mycoursesux-btn--ghost:hover {
     background: rgba(255,255,255,0.2);
+    text-decoration: none;
 }
 
 /* FALLBACK BACKGROUND */
@@ -323,6 +327,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 6px;
 }
 
 .mycoursesux-compact-lastaccess {
@@ -516,6 +521,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 50%;
 }
 
 /* INITIAL */
@@ -528,6 +534,20 @@
     font-size: 42px;
     font-weight: 700;
     color: rgba(255,255,255,0.9);
+}
+
+.mycoursesux-image-action-actions{
+    gap: 6px;
+    display: flex;
+}
+
+.mycoursesux-image-action-actions .mycoursesux-btn--ghost{
+    color: #fff;
+}
+
+.mycoursesux-image-action-actions .mycoursesux-btn--ghost:hover{
+    color: #333;
+    text-decoration: none;
 }
 
 /* =========================

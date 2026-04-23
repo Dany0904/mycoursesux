@@ -26,5 +26,12 @@ if ($hassiteconfig) {
         ]
     ));
 
+    $settings->add(new admin_setting_configcheckbox(
+        'local_mycoursesux/enable_redirect',
+        'Reemplazar vista de cursos',
+        'Usar vista personalizada en lugar de /my/courses.php',
+        1
+    ));
+
     $ADMIN->add('localplugins', $settings);
 }
